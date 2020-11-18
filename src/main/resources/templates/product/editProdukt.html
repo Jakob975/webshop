@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ændring af et produkt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+<style>
+    body {background-color: aqua;}
+
+</style>
+<body>
+    <h1>    Vi er i editProdukt</h1>
+
+
+    <form action="/updateproduktet" method="post">
+        Produkt id.
+        <br>
+        <input type="text" name="produktID" th:value="${produkt.produktID}">
+        <br>
+        Produkt navn:
+        <!--
+        <div class="form-group">
+            <input type="text" name="name" th:value="${event.name}" class="form-control" placeholder="">
+        </div>
+        -->
+        <br>
+
+            <input type="text" name="navn" th:value="${produkt.navn}"  placeholder="   ">
+
+        <br>
+        pris:
+        <div>
+            <input type="text" name="pris" th:value="${produkt.pris}"  placeholder="">
+        </div>
+        <br>
+        beskrivelse:
+        <div>
+            <input type="text" name="beskrivelse" th:value="${produkt.beskrivelse}" class="form-control" placeholder="">
+        </div>
+        <br>
+
+        <div class="form-group">
+
+
+            <button type="submit" class="btn btn-success">Gem</button>
+            
+            <a href="/allProdukt" class="btn btn-info">Tilbage</a>
+        </div>
+        <!--
+        <div class="container">
+       <h1>JakobsProdukter</h1>
+         <br>
+            <h2>Her er dine muligheder</h2>
+         <a href="/createProdukt"><button class = "btn btn-success">Opret produkt</button></a>
+         <a href="/allProdukt"><button class = "btn btn-success">Vis alle produkter</button></a>
+         <a href="/"><button class="btn btn-info">Tilbage til start billed</button></a>
+
+   </div>
+
+
+
+
+        -->
+
+
+    </form>
+</body>
+</html>

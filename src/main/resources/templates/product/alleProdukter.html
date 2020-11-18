@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Viser alle produkter</title>
+</head>
+<style>
+    body {background-color: aqua;}
+    button {color: mediumblue;}
+    .jakobsupdate {color: green; }
+    .jakobsdelete {background-color: red;}
+
+
+</style>
+<body>
+
+
+    <br>
+    <br>
+
+    <h1>Her vises en liste over alle produkter</h1>
+
+
+
+<div class="container">
+    <h2>Vareliste</h2>
+          <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Varenavn</th>
+                    <th>Pris</th>
+                    <th>Beskrivelse</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!--<tr th:each="customer : ${customers}">-->
+                <tr th:each="produkt : ${produkter}">
+                    <td th:text="${produkt.produktID}" />
+                    <td th:text="${produkt.navn}" />
+                    <td th:text="${produkt.pris}" />
+                    <td th:text="${produkt.beskrivelse}" />
+
+
+
+
+             <!--       <td><a class="btn btn-outline-primary btn-sm" th:href="@{'/updateEvent/' + ${event.id}}">Opdater</a></td> -->
+
+                    <td><button> <a class="jakobsfarve" th:href="@{'/editProdukt/' + ${produkt.produktID}}">Opdater</a></button></td>
+
+                    <td><button> <a class="btn-outline-danger" th:href="@{'/deleteProdukt/' + ${produkt.produktID}}">Slet</a></button></td>
+<!--
+                    <td><a class="btn btn-outline-primary btn-sm" th:href="@{'/updateEvent/' + ${event.id}}">Opdater</a></td>
+
+
+
+
+
+                     <td><a class="btn btn-outline-danger btn-sm" th:href="@{'/delete/' + ${event.id}}">Slet</a></td>
+                    </th>
+-->
+
+                </tr>
+            </tbody>
+         </table>
+
+    </div>
+    <br>
+    <br>
+    <nav class="navigation">
+        <a href="/"><button class="btn btn-info">Tilbage til start billed</button></a>
+    </nav>
+
+
+
+
+
+</body>
+</html>

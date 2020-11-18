@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Delete produkt</title>
+    <style>
+        body {background-color: aqua;}
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+<h1>    Vi er i deleteProdukt</h1>
+
+
+<form action="/deleteproduktet" method="post">
+    <div class="form-group row">
+      <div class="col-xs-4">
+          <br>
+          Id
+          <br>
+          <input type="text" name="produktID" th:value="${produkt.produktID}">
+          <br>
+
+
+
+          <br>
+          Produkt navn:
+          <br>
+          <div class="form-group">
+              <input type="text" name="navn" th:value="${produkt.navn}" class="form-control" plceholder="">
+          </div>
+
+       pris:
+           <div>
+               <input type="text" name="pris" th:value="${produkt.pris}" class="form-control" placeholder="">
+           </div>
+
+           beskrivelse:
+           <div>
+               <input type="text" name="beskrivelse" th:value="${produkt.beskrivelse}" class="form-control" placeholder="">
+           </div>
+
+
+           <div class="form-group">
+
+
+               <button type="submit" class="btn btn-warning">Delete</button>
+
+               <a href="/allProdukt" class="btn btn-primary">Tilbage</a>
+           </div>
+
+        </div>
+    </div>
+   </form>
+
+
+
+</body>
+</html>

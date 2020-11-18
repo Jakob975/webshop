@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Oprettelse af et produkt</title>
+</head>
+<style>
+    body {background-color: aqua;}
+</style>
+
+<body>
+    <H1>Her oprettes produkter</H1>
+
+    <header>
+
+    </header>
+
+    <div class="container">
+         <h1>Opret produkt</h1>
+             <form th:action="@{/createProdukt}" th:object="${produkt}" method="post">
+         <!--<form th:action="@{/createCustomer}" th:object="${customer}" method="post">-->
+              <div class="form-group row">
+                 <div class="col-xs-4">
+
+                 <tr>
+
+                     <th>Produkt navn</th>
+                     <br>
+                     <td><input type="text" th:field="*{navn}" class="form-control" placeholder="Produkt navn"/></td>
+                     <br>
+                     Produkt pris
+                     <br>
+                     <td><input type="text" th:field="*{pris}" class="form-control" placeholder="Produkt pris" /> </td>
+                     <br>
+                     Produkt beskrivelse
+                     <br>
+                     <td><input type="text" th:field="*{beskrivelse}" class="form-control" placeholder="Produkt beskrivelse" /> </td>
+                     <br>
+
+                 </tr>
+                 <tr>
+                     <!--
+                      <td><input type="text" th:field="*{navn}" placeholder="Produkt navn" /> </td>
+
+                      <td><input type="text" th:field="*{cusFirstName}" placeholder="First name" /></td>
+
+                      <td><input type="text" th:field="*{pris}" placeholder="Produkt pris" /> </td>
+                      <td><input type="text" th:field="*{beskrivelse}" placeholder="Produkt beskrivelse" /> </td>
+                    -->
+                     <br>
+                     <br>
+                     <input type="submit" value="Create" class="btn btn-success">
+                     <a href="/allProdukt" class="btn btn-info">Vis alle produkter</a>
+
+                 </tr>
+              </div>
+         </div>
+
+
+    </form>
+
+
+
+    </div>
+    <br>
+    <br>
+    <nav class="navigation">
+          <a href="/"class="btn btn-info">Tilbage til forsiden af Jakobs Web Shob</a>
+    </nav>
+
+</body>
+</html>
